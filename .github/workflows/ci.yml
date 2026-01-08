@@ -21,3 +21,14 @@ jobs:
 
             - name: Run server
               run: uv run python3 main.py
+            
+            - name: Health Check Route
+              run: |
+                response=$(curl http://localhost:8000/health)
+                echo "Response: $response"
+                if echo "$response" | grep -q "Server is running"; then
+                  echo "Health check passed"
+                else
+                  echo "Health check failed"
+                  exit 1
+                fi
