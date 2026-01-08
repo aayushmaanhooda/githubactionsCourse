@@ -20,7 +20,10 @@ jobs:
               run: uv sync 
 
             - name: Run server
-              run: uv run python3 main.py &
+              run: |
+               uv run python3 main.py &
+               echo $! > server.pid
+                sleep 2
             
             - name: Wait for server to start
               run: sleep 2
@@ -38,4 +41,4 @@ jobs:
                 fi
 
             - name: Stop server
-              run: kill %1
+              run: kill $(cat server.pid)
