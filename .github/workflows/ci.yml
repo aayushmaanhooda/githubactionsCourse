@@ -14,11 +14,10 @@ jobs:
             - uses: actions/checkout@v4
 
             - name: Install uv
-              uses: astral-sh/setup-uv@2
+              uses: astral-sh/setup-uv@v2
             
             - name: Install Dependencies
               run: uv sync 
 
             - name: Run server
               run: uv run python3 main.py
-              
