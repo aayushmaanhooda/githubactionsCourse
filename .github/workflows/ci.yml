@@ -20,7 +20,7 @@ jobs:
               run: uv sync 
 
             - name: Run server
-              run: uv run python3 main.py
+              run: uv run python3 main.py &
             
             - name: Wait for server to start
               run: sleep 2
@@ -36,6 +36,6 @@ jobs:
                   echo "Health check failed"
                   exit 1
                 fi
-                
+
             - name: Stop server
               run: kill %1
