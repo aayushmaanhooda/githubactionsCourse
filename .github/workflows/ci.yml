@@ -1,0 +1,24 @@
+name: Health Check
+
+on:
+    push:
+        branches: ["masrter"]
+    
+    workflow_dispatch:
+
+jobs:
+    health:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Install uv
+              uses: astral-sh/setup-uv@2
+            
+            - name: Install Dependencies
+              run: uv sync 
+
+            - name: Run server
+              run: uv run python3 main.py
+              
