@@ -1,6 +1,6 @@
 VARIABLES AND SECRET IN GITHUB ACTIONS
 
-VARIABLES FOR A SINGLE WORKFLOW 
+TYPE 1: VARIABLES FOR A SINGLE WORKFLOW 
 deine it using th env key in workflow file.
 the scope of a custom variable set by this method is limited to the element in echih it is defined.
 You can define vatriables that are scoped for:
@@ -8,3 +8,12 @@ You can define vatriables that are scoped for:
 1. The entire workflow, by using env at the top level of the wokflow file.
 2. The contents of a job within a workflow
 3., A specific step within a job
+
+TYPE: 2 VARIABLES FOR CONFIG
+you can create config vars for use across multiple workflows,
+define it in github itself under VARIABLES
+
+
+TYPE: 3 CONTEXT VAIBALES FOR GITHUB METADATA
+these are in buuild variables defined by github
+https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#github-context
