@@ -1,4 +1,4 @@
-name: Testing config variables
+name: Testing context variables
 
 on:
     workflow_dispatch: 
