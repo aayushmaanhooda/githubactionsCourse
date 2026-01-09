@@ -1,0 +1,18 @@
+name: Tetsing workflow variables
+
+on:
+    workflow_dispatch: 
+
+env: 
+    cloud: google-cloud
+
+jobs:
+    greeting_job:
+        runs-on: ubuntu-latest
+        env: 
+            Greeting: Hello
+        steps:
+            - name: "Say hello King its Monday"
+              run: echo "$Greeting $name is using $cloud"
+              env:
+                name: aayushmaan
