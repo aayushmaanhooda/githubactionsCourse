@@ -1,0 +1,5 @@
+RUNNERS
+these are just VM where our worflows will RUNNERS
+
+1. self hosted runner
+2. default - github hosted runner
